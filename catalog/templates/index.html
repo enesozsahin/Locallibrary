@@ -10,14 +10,11 @@
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Nonsense:</strong> {{ Nonsense }}</li>
   </ul>
 {% endblock %}
 
 <!-- Add image -->
-{% load static %}
-<img src="{% static 'catalog/images/myimg.jpg' %}" alt="UML diagram" style="width:555px;height:540px;">
-<!--Important there is an error with the specified path-->
-
 
 
 
@@ -30,6 +27,9 @@ context = {
     'num_instances': num_instances,
     'num_instances_available': num_instances_available,
     'num_authors': num_authors,
+    'Nonsense': myStr,
+
+
 }
 
 return render(request, 'index.html', context=context)
