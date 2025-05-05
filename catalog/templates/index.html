@@ -10,12 +10,14 @@
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
-    <li><strong>Nonsense:</strong> {{ Nonsense }}</li>
+    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
   </ul>
 {% endblock %}
 
-<!-- Add image -->
-
+{% if num_visits >= 0 %}
+    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+{% endif %}
 
 
 <!-- Add additional CSS in static file -->
