@@ -14,6 +14,7 @@ admin.site.register(Genre)
 
 
 
+
 class BooksInstanceInline(admin.StackedInline):
     model = BookInstance
     extra= 0
@@ -62,6 +63,14 @@ class BookInstanceAdmin(admin.ModelAdmin):
     list_display = ('book', 'status', 'due_back')
     list_filter = ('status', 'due_back')
 
+    fieldsets = (
+            (None, {
+                'fields': ('book','imprint', 'id')
+            }),
+            ('Availability', {
+                'fields': ('status', 'due_back', 'borrower')
+            }),
+        )
 
 #Added language and inline book
 @admin.register(Language)
