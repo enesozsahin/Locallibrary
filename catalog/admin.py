@@ -52,7 +52,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', Author, 'display_genre')
+    list_display = ('title', 'author', 'display_genre')
 
     inlines = [BooksInstanceInline]    
 
